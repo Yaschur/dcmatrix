@@ -11,8 +11,8 @@ class Facet3 {
   void drawTo(std::array<uint8_t, 8> &matrix);
 
  private:
-  uint8_t _row;
   uint8_t _off;
+  uint8_t _row;
   uint8_t _mask;
   std::array<uint8_t, 3> _lines;
 };

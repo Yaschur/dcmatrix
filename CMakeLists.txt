@@ -10,6 +10,10 @@ target_include_directories(
   facet3 PUBLIC
   include/facet3
 )
+target_compile_options(
+  facet3 PRIVATE
+  -Wall -Weffc++ -Wextra -Wsign-conversion
+)
 
 add_subdirectory(tools)
 
@@ -26,6 +30,10 @@ target_link_libraries(
   GTest::Main
   GMock::GMock
   GMock::Main
+)
+target_compile_options(
+  facet3UnitTests PRIVATE
+  -Wall -Weffc++ -Wextra -Wsign-conversion
 )
 
 add_test(
