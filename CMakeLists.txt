@@ -15,6 +15,23 @@ target_compile_options(
   -Wall -Weffc++ -Wextra -Wsign-conversion
 )
 
+add_library(
+  dcmatrix
+  src/dcmatrix/Dcmatrix.cpp
+)
+target_include_directories(
+  dcmatrix PUBLIC
+  include/dcmatrix
+)
+target_link_libraries(
+  dcmatrix
+  facet3
+)
+target_compile_options(
+  dcmatrix PRIVATE
+  -Wall -Weffc++ -Wextra -Wsign-conversion
+)
+
 add_subdirectory(tools)
 
 enable_testing()
