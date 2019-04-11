@@ -53,7 +53,28 @@ target_compile_options(
   -Wall -Weffc++ -Wextra -Wsign-conversion
 )
 
+add_executable(
+  dcmatrixUnitTests
+  src/dcmatrix/Dcmatrix.test.cpp
+)
+target_link_libraries(
+  dcmatrixUnitTests
+  dcmatrix
+  GTest::GTest
+  GTest::Main
+  GMock::GMock
+  GMock::Main
+)
+target_compile_options(
+  dcmatrixUnitTests PRIVATE
+  -Wall -Weffc++ -Wextra -Wsign-conversion
+)
+
 add_test(
-  test_all
+  test_facet
   facet3UnitTests
+)
+add_test(
+  test_dcmatrix
+  dcmatrixUnitTests
 )
