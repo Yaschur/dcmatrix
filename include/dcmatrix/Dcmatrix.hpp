@@ -1,21 +1,16 @@
 #pragma once
-#include <array>
-#include <cstdint>
-#include <utility>
 #include "Facet3.hpp"
-using namespace std;
 
 class Dcmatrix {
  public:
-  explicit Dcmatrix(const array<uint8_t, 8> &rowPinsInOrder, const array<uint8_t, 8> &colPinsInOrder);
+  Dcmatrix();
   void addFacet();
-  uint8_t getFacetsNum();
-  void setPics(initializer_list<uint8_t> pics);
-  pair<uint8_t, array<pair<uint8_t, bool>, 8>> getLine(uint8_t lineNum);
+  unsigned char getFacetsNum();
+  void setPic(unsigned char facet, unsigned char pic[3]);
+  void fillLine(unsigned char row, bool lineBuffer[8]);
 
  private:
-  array<uint8_t, 8> _rowPins, _colPins;
-  array<Facet3, 4> _facets;
-  array<uint8_t, 8> _matrix;
-  uint8_t _facetsNum;
+  Facet3 _facets[4];
+  unsigned char _matrix[8];
+  unsigned char _facetsNum;
 };

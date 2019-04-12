@@ -1,17 +1,12 @@
 #pragma once
 
-#include <array>
-#include <cstdint>
-using namespace std;
-
 class Facet3 {
  public:
-  explicit Facet3(uint8_t row, uint8_t col);
-  virtual ~Facet3();
-  virtual void setLines(const std::array<uint8_t, 3> &rows);
-  virtual void drawTo(std::array<uint8_t, 8> &matrix);
+  explicit Facet3(unsigned char row, unsigned char col);
+  void setLines(unsigned char rows[3]);
+  void drawTo(unsigned char matrix[8]);
 
  private:
-  uint8_t _off, _row, _mask;
-  std::array<uint8_t, 3> _lines;
+  unsigned char _off, _row, _mask;
+  unsigned char _lines[3];
 };
