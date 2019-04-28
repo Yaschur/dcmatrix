@@ -39,14 +39,11 @@ TEST(DcmatrixTests, fill_lines) {
   unsigned char pic1[3] = {0b001, 0b010, 0};
   unsigned char pic2[3] = {0b001, 0b010, 0b001};
   unsigned char pic3[3] = {0b110, 0b100, 0b010};
-  bool exps[8][8] = {{false, false, true, false, false, true, true, false},
-                     {false, true, false, false, false, true, false, false},
-                     {false, false, false, false, false, false, true, false},
-                     {false, false, false, false, false, false, false, false},
-                     {false, false, false, false, false, false, false, false},
-                     {false, false, false, false, false, false, false, true},
-                     {false, false, false, false, false, false, true, false},
-                     {false, false, false, false, false, false, false, true}};
+  bool exps[8][8] = {
+      {false, false, true, false, false, true, true, false},   {false, true, false, false, false, true, false, false},
+      {false, false, false, false, false, false, true, false}, {false, false, false, true, true, false, false, false},
+      {false, false, false, false, true, false, false, false}, {false, false, false, false, false, false, false, true},
+      {false, false, false, false, false, false, true, false}, {false, false, false, false, false, false, false, true}};
   matrix.addFacet();
   matrix.addFacet();
   matrix.setPic(0, pic1);
